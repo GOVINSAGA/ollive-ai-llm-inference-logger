@@ -157,17 +157,14 @@ input, textarea {
   justify-content: center;
   font-size: 18px;
   font-weight: 700;
-  color: white;
+  color: var(--bg-primary);
   box-shadow: var(--accent-glow);
 }
 
 .sidebar-logo h1 {
   font-size: 16px;
   font-weight: 700;
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
   letter-spacing: -0.3px;
 }
 
@@ -184,7 +181,7 @@ input, textarea {
   width: 100%;
   padding: 10px 16px;
   background: var(--accent-gradient);
-  color: white;
+  color: var(--bg-primary);
   border-radius: var(--radius-sm);
   font-size: 13px;
   font-weight: 600;
@@ -464,12 +461,12 @@ input, textarea {
 
 .message.user .message-avatar {
   background: var(--accent-gradient);
-  color: white;
+  color: var(--bg-primary);
 }
 
 .message.assistant .message-avatar {
   background: var(--success);
-  color: white;
+  color: var(--bg-primary);
 }
 
 .message-content {
@@ -942,16 +939,14 @@ input, textarea {
   background: var(--accent-gradient);
   border-radius: var(--radius-xl);
   box-shadow: var(--accent-glow);
+  color: var(--bg-primary);
   animation: pulse-glow 3s ease-in-out infinite;
 }
 
 .about-hero h1 {
   font-size: 32px;
   font-weight: 800;
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
   margin-bottom: 8px;
   letter-spacing: -0.5px;
 }
@@ -1019,7 +1014,6 @@ input, textarea {
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-md);
   padding: 20px;
-  backdrop-filter: blur(12px);
   transition: all var(--transition-base);
 }
 
@@ -1079,7 +1073,7 @@ input, textarea {
   height: 32px;
   min-width: 32px;
   background: var(--accent-gradient);
-  color: white;
+  color: var(--bg-primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
