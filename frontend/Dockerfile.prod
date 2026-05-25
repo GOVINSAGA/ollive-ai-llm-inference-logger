@@ -2,7 +2,7 @@
 FROM node:20-alpine AS build
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 COPY . .
 # Setting VITE_API_URL dynamically via docker-compose will only work if we use an entrypoint script
 # or build it during docker build. For Vite, environment variables are baked in during build time.
