@@ -34,6 +34,9 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-observer_secret_2024}
       - BACKEND_PORT=3001
       - NODE_ENV=${NODE_ENV:-development}
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
     depends_on:
       postgres:
         condition: service_healthy
@@ -47,6 +50,9 @@ services:
       - "5173:5173"
     environment:
       - VITE_API_URL=http://backend:3001
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
     depends_on:
       - backend
     restart: unless-stopped
