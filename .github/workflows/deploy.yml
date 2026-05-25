@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: govinsaga/ollive-ai-llm-inference-logger
 
 jobs:
   build-and-push:

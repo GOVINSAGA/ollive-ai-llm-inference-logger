@@ -18,7 +18,7 @@ services:
       retries: 10
 
   backend:
-    image: ghcr.io/govinsaga/ollive-ai-llm-backend:latest
+    image: ghcr.io/govinsaga/ollive-ai-llm-inference-logger-backend:latest
     ports:
       - "${BACKEND_PORT:-3001}:3001"
     environment:
@@ -38,7 +38,7 @@ services:
     restart: unless-stopped
 
   frontend:
-    image: ghcr.io/govinsaga/ollive-ai-llm-frontend:latest
+    image: ghcr.io/govinsaga/ollive-ai-llm-inference-logger-frontend:latest
     ports:
       - "5173:80"
     depends_on:
