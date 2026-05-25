@@ -3,46 +3,46 @@
    ═══════════════════════════════════════════════════════ */
 
 :root {
-  /* Color Palette - Slate & Amber */
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --bg-card: #1e293b;
-  --bg-card-hover: #334155;
-  --bg-input: #0f172a;
-  --bg-overlay: rgba(15, 23, 42, 0.85);
+  /* Color Palette - Monochrome High-Contrast */
+  --bg-primary: #000000;
+  --bg-secondary: #111111;
+  --bg-card: #111111;
+  --bg-card-hover: #1a1a1a;
+  --bg-input: #000000;
+  --bg-overlay: rgba(0, 0, 0, 0.85);
 
   /* Solid Theme Replacements for Glass */
   --glass-bg: var(--bg-card);
   --glass-border: var(--border-primary);
   --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
-  /* Accent Colors - Amber */
-  --accent-primary: #f59e0b;
-  --accent-primary-light: #fbbf24;
-  --accent-primary-dark: #d97706;
-  --accent-secondary: #fcd34d;
-  --accent-gradient: #f59e0b;
+  /* Accent Colors - White/Monochrome */
+  --accent-primary: #ffffff;
+  --accent-primary-light: #f5f5f5;
+  --accent-primary-dark: #e5e5e5;
+  --accent-secondary: #888888;
+  --accent-gradient: #ffffff;
   --accent-glow: none;
 
   /* Status Colors */
-  --success: #10b981;
-  --success-bg: rgba(16, 185, 129, 0.1);
-  --error: #ef4444;
-  --error-bg: rgba(239, 68, 68, 0.1);
-  --warning: #f59e0b;
-  --warning-bg: rgba(245, 158, 11, 0.1);
-  --cancelled: #8b5cf6;
-  --cancelled-bg: rgba(139, 92, 246, 0.1);
+  --success: #ffffff; /* Using white for success/primary to keep it strict monochrome */
+  --success-bg: rgba(255, 255, 255, 0.1);
+  --error: #ff4444;
+  --error-bg: rgba(255, 68, 68, 0.1);
+  --warning: #f5a623;
+  --warning-bg: rgba(245, 166, 35, 0.1);
+  --cancelled: #888888;
+  --cancelled-bg: rgba(136, 136, 136, 0.1);
 
   /* Text */
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
-  --text-accent: #fbbf24;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-muted: #666666;
+  --text-accent: #ffffff;
 
   /* Borders */
-  --border-primary: #334155;
-  --border-active: #f59e0b;
+  --border-primary: #333333;
+  --border-active: #ffffff;
 
   /* Typography */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
