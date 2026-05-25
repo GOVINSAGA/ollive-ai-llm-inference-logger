@@ -267,11 +267,11 @@ function ThroughputChart({ data }) {
       <path d={areaPath} fill="url(#areaGradient)" />
 
       {/* Line */}
-      <path d={linePath} fill="none" stroke="#6366f1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d={linePath} fill="none" stroke="var(--accent-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 
       {/* Dots */}
       {points.map((p, i) => (
-        <circle key={i} cx={p.x} cy={p.y} r="3" fill="#6366f1" stroke="#0a0e1a" strokeWidth="1.5" />
+        <circle key={i} cx={p.x} cy={p.y} r="3" fill="var(--accent-primary)" stroke="var(--bg-primary)" strokeWidth="1.5" />
       ))}
 
       {/* Y-axis labels */}
