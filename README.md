@@ -226,7 +226,7 @@ ollive.ai-llm/
     └── src/
         ├── main.jsx
         ├── App.jsx
-        ├── index.css           # Premium dark theme
+        ├── index.css           # Monochrome High-Contrast theme
         ├── api/
         │   └── client.js       # API + SSE client
         └── components/
