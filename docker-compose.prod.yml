@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-llm_observer}
+      POSTGRES_USER: ${POSTGRES_USER:-observer}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-observer_secret_2024}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-observer} -d ${POSTGRES_DB:-llm_observer}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    image: ghcr.io/govinsaga/ollive-ai-llm-backend:latest
+    ports:
+      - "${BACKEND_PORT:-3001}:3001"
+    environment:
+      - NVIDIA_API_KEY=${NVIDIA_API_KEY}
+      - NVIDIA_MODEL=${NVIDIA_MODEL:-meta/llama-3.2-11b-vision-instruct}
+      - NVIDIA_API_URL=${NVIDIA_API_URL:-https://integrate.api.nvidia.com/v1/chat/completions}
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=${POSTGRES_DB:-llm_observer}
+      - POSTGRES_USER=${POSTGRES_USER:-observer}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-observer_secret_2024}
+      - BACKEND_PORT=3001
+      - NODE_ENV=production
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  frontend:
+    image: ghcr.io/govinsaga/ollive-ai-llm-frontend:latest
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  pgdata:
